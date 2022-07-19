@@ -1,5 +1,10 @@
 # 8_Bit_UART
 
+## Table of Contents
+- [Abstract](#abstract)
+- [UART Transmitter Receiver Connection](#uart-transmitter-receiver-connection)
+- [Output Signals](#output-signals)
+
 ## Abstract
 UART stands for Universal Asynchronous Receiver/Transmitter. UART is a hardware communication protocol that uses asynchronous serial communication with configurable speed. As there is no clock signal to synchronize the output bits from the transmitting device going to the receiving end, it is called Asynchronous. UART interface is divided into two parts:- Transmitter and Receiver. Transmitter sends the data to the receiver via data lines. It is the most used protocol in device-to-device communication.
 
