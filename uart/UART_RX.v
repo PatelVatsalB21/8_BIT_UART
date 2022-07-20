@@ -8,7 +8,7 @@ module UART_RX
    input        Clock,
    input        Input_Serial,
    output       Main_RX_Receive,
-    output [7:0] Main_Data_In
+    output [7:0] Main_Data_Out
    );
    
   parameter IDLE         = 3'b000;
@@ -18,7 +18,7 @@ module UART_RX
   
   reg [7:0] Clock_Count = 0;
   reg [2:0] Data_Bit_Index   = 0;
-  reg [7:0] Data_In     = 0;
+  reg [7:0] Data_Out     = 0;
   reg       RX_Receive       = 0;
   reg [2:0] Present_State     = 0;
   
@@ -67,7 +67,7 @@ module UART_RX
           else
           begin
             Clock_Count          <= 0;
-            Data_In[Data_Bit_Index] <= Input_Serial;
+            Data_Out[Data_Bit_Index] <= Input_Serial;
             
             if (Data_Bit_Index < 7)
             begin
@@ -103,7 +103,7 @@ module UART_RX
     endcase
   end    
   
-  assign Main_RX_Receive   = RX_Receive;
-  assign Main_Data_In = Data_In;
+  assign Main_RX_Receive = RX_Receive;
+  assign Main_Data_Out = Data_Out;
   
 endmodule
